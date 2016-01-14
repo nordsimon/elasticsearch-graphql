@@ -13,6 +13,7 @@ Disclaimer: This is a proof of concept. All features are working but bugs will a
 ## Usage
 ```javascript
 var graphql = require('graphql');
+var esGraphQL = require('elasticsearch-graphql')
 var hitsSchema = require('./schemas/myGraphQLSchema')
 
 esGraphQL({
