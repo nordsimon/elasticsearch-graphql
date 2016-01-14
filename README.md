@@ -1,5 +1,10 @@
 # Elastic Search GraphQL
-Schema and query builder for creating GraphQL server from existing Elastic Search index
+Schema and query builder for Elastic Search
+
+- Creates a static typed [graphql](https://github.com/graphql/graphql-js) schema from an elastic search mapping
+- Transforms your graphql query and creates an elastic search body
+- Runs the search on your elastic index
+- Returns the results and calls your hits schema
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -71,6 +76,8 @@ It will fetch the current mapping from elasticsearch and create a static typed s
 ```
 
 ### TODO
-- [ ] Add tests
-- [ ] Allow more aggregation types
-- [ ] Allow more complex filters
+[ ] Do smarter elasticsearch queries
+[ ] Add more options, like query type etc.
+[ ] Add tests
+[ ] Allow more aggregation types
+[ ] Allow more complex filters
