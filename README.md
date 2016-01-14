@@ -6,6 +6,8 @@ Schema and query builder for Elastic Search
 - Runs the search on your elastic index
 - Returns the results and calls your hits schema
 
+Disclaimer: This is a proof of concept. All features are working but bugs will appear. Contact me on [github](https://github.com/nordsimon/elasticsearch-graphql) for any issue and I'll look in to it
+
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ## Usage
