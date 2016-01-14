@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "elasticsearch": "^10.1.0",
+    "flat": "^1.6.0",
+    "lodash": "^3.10.1",
+    "uuid": "^2.0.1"
+  }
 }
