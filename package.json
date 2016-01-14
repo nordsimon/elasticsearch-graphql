@@ -1,5 +1,5 @@
 {
-  "name": "elastic2graphqlSchema",
+  "name": "elasticsearch-graphql",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "elasticsearch": "^10.1.0",
-    "flat": "^1.6.0",
-    "lodash": "^3.10.1",
-    "uuid": "^2.0.1"
+    "elasticsearch": "10.1.0",
+    "flat": "1.6.0",
+    "lodash": "3.10.1"
+  },
+  "devDependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "express-graphql": "^0.4.5",
+    "graphql": "^0.4.14"
   }
 }

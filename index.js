@@ -2,9 +2,13 @@ var elasticsearch = require('elasticsearch')
 var query = require('./lib/query')
 
 function init (opts, cb) {
+  if (!opts.graphql || !opts.graphql.GraphQLInt) return cb(new Error('Missing graphql option, needed for internal reference'))
+  if (!opts.elastic.index) return cb(new Error('Missing elastic search index to fetch mapping from'))
+  if (!opts.elastic.type) return cb(new Error('Missing elastic search type to fetch mapping from'))
+
   opts.client = new elasticsearch.Client({
     host: opts.elastic.host || 'localhost:9200',
-    log: 'debug'
+    log: opts.elastic.log || 'trace'
   })
 
   return opts.client.indices.getMapping({
