@@ -1,7 +1,7 @@
 {
   "name": "elasticsearch-graphql",
   "version": "1.0.3",
-  "description": "",
+  "description": "Schema generator and query builder for elasticsearch",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

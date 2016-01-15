@@ -79,8 +79,9 @@ It will fetch the current mapping from elasticsearch and create a static typed s
 ```
 
 ### TODO
-[ ] Do smarter elasticsearch queries
-[ ] Add more options, like query type etc.
-[ ] Add tests
-[ ] Allow more aggregation types
-[ ] Allow more complex filters
+* Support multiple indexes
+* Do smarter elasticsearch queries
+* Add more options, like query type etc.
+* Add tests
+* Allow more aggregation types
+* Allow more complex filters
