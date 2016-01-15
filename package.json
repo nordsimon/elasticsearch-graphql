@@ -6,6 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nordsimon/elasticsearch-graphql"
+  },
+  "bugs": {
+    "type": "git",
+    "url": "https://github.com/nordsimon/elasticsearch-graphql"
+  },
   "keywords": [],
   "author": "Simon Nord <simon@nord.org>",
   "license": "ISC",
