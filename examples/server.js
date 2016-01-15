@@ -1,4 +1,4 @@
-var esGraphQL = require('../')
+var esGraphQL = require('elasticsearch-graphql')
 var graphql = require('graphql');
 var hitsSchema = require('./schema')
 

@@ -3,7 +3,9 @@ var graphql = require('graphql');
 module.exports = {
   resolve: function(hits, params, data) {
     console.log("Will fetch", hits.map(function(hit) { return hit._id }).join(', '), "from anywhere")
-    return hits
+    return new Promise(function(resolve, reject) {
+      resolve(hits)
+    })
   },
   args: {
   },
