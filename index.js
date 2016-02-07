@@ -1,5 +1,4 @@
 var elasticsearch = require('elasticsearch')
-var query = require('./lib/query')
 
 function init (opts, cb) {
   if (!opts.graphql || !opts.graphql.GraphQLInt) return cb(new Error('Missing graphql option, needed for internal reference'))
@@ -10,6 +9,10 @@ function init (opts, cb) {
     host: opts.elastic.host || 'localhost:9200',
     log: opts.elastic.log || 'trace'
   })
+
+  require('./graphql').set(opts.graphql)
+
+  var schemaBuilder = require('./lib/schemaBuilder')
 
   return opts.client.indices.getMapping({
     index: opts.elastic.index,
@@ -22,7 +25,7 @@ function init (opts, cb) {
     var properties = mapping.properties
     var transform = mapping.transform
 
-    cb(null, query(opts, properties, transform))
+    cb(null, schemaBuilder(opts, properties, transform))
   })
 }
 
