@@ -62,9 +62,9 @@ It will fetch the current mapping from elasticsearch and create a static typed s
   ) {
     aggregations {
       status {
-        timestamp(limit: 5) {
+        timestamp {
           unhandledDocs
-          buckets {
+          buckets(limit: 5) {
             key,
             count
           }
