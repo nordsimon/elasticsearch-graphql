@@ -60,7 +60,7 @@ esGraphQL({
 
       t.deepEqual(Object.keys(schema.args), Object.keys(expectedArgs), 'args length matches')
 
-      Object.keys(schema.args).forEach(key => {
+      Object.keys(schema.args).forEach((key) => {
         if (Array.isArray(expectedArgs[key].name)) {
           t.equal(schema.args[key].type.ofType.name, expectedArgs[key].name[0], `contains: ${key}`)
         } else {
