@@ -4,7 +4,7 @@
   "description": "Schema generator and query builder for elasticsearch",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape __tests__/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,10 @@
     "elasticsearch": "10.1.0",
     "flat": "1.6.0",
     "lodash": "3.10.1"
+  },
+  "devDependencies": {
+    "graphql": "0.4.16",
+    "node-random-name": "^1.0.1",
+    "tape": "4.4.0"
   }
 }

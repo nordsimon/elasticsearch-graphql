@@ -1,0 +1,306 @@
+{
+  "articles": {
+    "mappings": {
+      "type": {
+        "properties": {
+          "colour": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "cushions": {
+            "properties": {
+              "colour": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "id": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "manufacturer": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "mattresses": {
+                "properties": {
+                  "colour": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "manufacturer": {
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      },
+                      "name": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                      }
+                    }
+                  },
+                  "models": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "price": {
+                    "type": "long"
+                  },
+                  "size": {
+                    "properties": {
+                      "length": {
+                        "type": "long"
+                      },
+                      "width": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "models": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "price": {
+                "type": "long"
+              },
+              "size": {
+                "properties": {
+                  "length": {
+                    "type": "long"
+                  },
+                  "width": {
+                    "type": "long"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "headboards": {
+            "properties": {
+              "EAN": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "colour": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "id": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "manufacturer": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "models": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "price": {
+                "type": "long"
+              },
+              "size": {
+                "properties": {
+                  "height": {
+                    "type": "long"
+                  },
+                  "length": {
+                    "type": "long"
+                  },
+                  "width": {
+                    "type": "long"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          },
+          "id": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "legs": {
+            "properties": {
+              "EAN": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "colour": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "id": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "manufacturer": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "models": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "price": {
+                "type": "long"
+              },
+              "size": {
+                "properties": {
+                  "height": {
+                    "type": "long"
+                  },
+                  "length": {
+                    "type": "long"
+                  },
+                  "width": {
+                    "type": "long"
+                  }
+                }
+              }
+            }
+          },
+          "manufacturer": {
+            "properties": {
+              "id": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          },
+          "mattresses": {
+            "properties": {
+              "EAN": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "colour": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "id": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "manufacturer": {
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  },
+                  "name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "price": {
+                "type": "long"
+              },
+              "size": {
+                "properties": {
+                  "height": {
+                    "type": "long"
+                  },
+                  "length": {
+                    "type": "long"
+                  },
+                  "width": {
+                    "type": "long"
+                  }
+                }
+              }
+            }
+          },
+          "model": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "models": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "name": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "size": {
+            "properties": {
+              "height": {
+                "type": "long"
+              },
+              "length": {
+                "type": "long"
+              },
+              "width": {
+                "type": "long"
+              }
+            }
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
