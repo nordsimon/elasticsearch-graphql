@@ -1,0 +1,44 @@
+Range query
+{
+  ordersSearch {
+    took,
+		aggregations {
+      size {
+        width {
+          range(ranges: [{name: "cheap",to: 50}, {name:"expensive", from: 50, to: 100 }, {name:"more expensive", from : 100 }]) {
+            value,
+            name,
+            count
+          }
+          stats {
+            count,
+            min,
+            max,
+            avg,
+            sum
+          }
+          terms(limit: 1) {
+            value
+            count
+          }
+        }
+      }
+    }
+  }
+}
+
+{
+    "aggs" : {
+        "price_ranges" : {
+            "range" : {
+                "field" : "price",
+                "keyed" : true,
+                "ranges" : [
+                    { "key" : "cheap", "to" : 50 },
+                    { "key" : "average", "from" : 50, "to" : 100 },
+                    { "key" : "expensive", "from" : 100 }
+                ]
+            }
+        }
+    }
+}

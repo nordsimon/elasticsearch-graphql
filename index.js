@@ -39,7 +39,10 @@ function init (opts, cb) {
       return schemaBuilder(opts, properties, transform)
     })
     .catch(function (err) {
+      console.log(err)
+
       cb && cb(err)
+
 
       return err
     })
