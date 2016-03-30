@@ -1,9 +1,10 @@
 var elasticsearch = require('elasticsearch')
 
-function init (opts, cb) {
-  if (!opts.graphql || !opts.graphql.GraphQLInt) return cb(new Error('Missing graphql option, needed for internal reference'))
-  if (!opts.elastic.index) return cb(new Error('Missing elastic search index to fetch mapping from'))
-  if (!opts.elastic.type) return cb(new Error('Missing elastic search type to fetch mapping from'))
+function init (opts) {
+  if (!opts.graphql || !opts.graphql.GraphQLInt) return throw new Error('Missing graphql option, needed for internal reference')
+  if (!opts.elastic.index) return throw new Error('Missing elastic search index to fetch mapping from')
+  if (!opts.elastic.type) return throw new Error('Missing elastic search type to fetch mapping from')
+  if (!opts.mapping) return throw new Error('Missing elastic mapping')
 
   if (opts.elastic.host) {
     opts.client = new elasticsearch.Client({
@@ -16,33 +17,12 @@ function init (opts, cb) {
 
   var schemaBuilder = require('./lib/schemaBuilder')
 
-  return new Promise(function (resolve, reject) {
-    if (opts.elastic.mapping) return resolve(opts.elastic.mapping)
+  var indexes = Object.keys(opts.mapping)
+  var mapping = opts.mapping[indexes[0]].mappings[opts.elastic.type]
+  var properties = mapping.properties
+  var transform = mapping.transform
 
-    opts.client.indices.getMapping({
-      index: opts.elastic.index,
-      type: opts.elastic.type
-    }, function (err, res) {
-      if (err) return reject(err)
-
-      resolve(res)
-    })
-  })
-    .then(function (response) {
-      var indexes = Object.keys(response)
-      var mapping = response[indexes[0]].mappings[opts.elastic.type]
-      var properties = mapping.properties
-      var transform = mapping.transform
-
-      cb && cb(null, schemaBuilder(opts, properties, transform))
-
-      return schemaBuilder(opts, properties, transform)
-    })
-    .catch(function (err) {
-      cb && cb(err)
-
-      return err
-    })
+  return schemaBuilder(opts, properties, transform)
 }
 
 module.exports = init
