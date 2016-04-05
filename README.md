@@ -16,7 +16,7 @@ var graphql = require('graphql');
 var esGraphQL = require('elasticsearch-graphql')
 var hitsSchema = require('./schemas/myGraphQLSchema')
 
-esGraphQL({
+var schema = esGraphQL({
   graphql: graphql,
   name: 'ordersSearch',
   elastic: {
@@ -25,21 +25,21 @@ esGraphQL({
     type: 'order'
   },
   hitsSchema: hitsSchema
-},function(err, schema) {
+})
 
-  var rootSchema = new graphql.GraphQLSchema({
-    query: new graphql.GraphQLObjectType({
-      name: 'RootQueryType',
-      fields: {
-        mySearchData: {
-          type: schema.type,
-          args: schema.args,
-          resolve: schema.resolve
-        }
+var rootSchema = new graphql.GraphQLSchema({
+  query: new graphql.GraphQLObjectType({
+    name: 'RootQueryType',
+    fields: {
+      mySearchData: {
+        type: schema.type,
+        args: schema.args,
+        resolve: schema.resolve
       }
-    })
+    }
   })
 })
+
 ```
 
 
