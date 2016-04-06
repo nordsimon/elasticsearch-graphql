@@ -19,6 +19,19 @@ var hitsSchema = require('./schemas/myGraphQLSchema')
 var schema = esGraphQL({
   graphql: graphql,
   name: 'ordersSearch',
+  mapping: {
+    "mappings": {
+      "order": {
+        "properties": {
+          "id": {
+            "type" : "string",
+            "index" : "not_analyzed"
+          },
+          ...
+        }
+      }
+    }
+  },
   elastic: {
     host: 'localhost:9200',
     index: 'orders',
