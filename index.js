@@ -10,9 +10,8 @@ function init (opts) {
 
   var schemaBuilder = require('./lib/schemaBuilder')
 
-  var mapping = opts.mapping.mappings[opts.elastic.type]
-  var properties = mapping.properties
-  var transform = mapping.transform
+  var properties = opts.mapping.properties
+  var transform = opts.mapping.transform
 
   return schemaBuilder(opts, properties, transform)
 }

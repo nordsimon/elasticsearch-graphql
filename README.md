@@ -10,6 +10,11 @@ For working example, checkout [elasticsearch-graphql-server-example](https://git
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
+## Compitability
+This package is tested and working on
+- [graphql](https://github.com/graphql/graphql-js) version ^0.6.2 (should be okey from version 0.5.x)
+- ElasticSearch version ^2.3.1
+
 ## Usage
 ```javascript
 var graphql = require('graphql');
@@ -20,22 +25,24 @@ var schema = esGraphQL({
   graphql: graphql,
   name: 'ordersSearch',
   mapping: {
-    "mappings": {
-      "order": {
-        "properties": {
-          "id": {
-            "type" : "string",
-            "index" : "not_analyzed"
-          },
-          ...
-        }
-      }
+    "properties": {
+      "id": {
+        "type" : "string",
+        "index" : "not_analyzed"
+      },
+      ...
     }
   },
   elastic: {
     host: 'localhost:9200',
     index: 'orders',
-    type: 'order'
+    type: 'order',
+    query: function(query, context) {
+      // Debug or modify the query anyway you want. The context is passed down from graphql
+      // Make sure to return the original or modified query
+
+      return query
+    }
   },
   hitsSchema: hitsSchema
 })
@@ -68,7 +75,6 @@ It will fetch the current mapping from elasticsearch and create a static typed s
       images: {
         createdBy: {
           values: ["Simon Nord", "James Kyburz"],
-          operator: OR
         }
       }
     }
@@ -76,9 +82,8 @@ It will fetch the current mapping from elasticsearch and create a static typed s
     aggregations {
       status {
         timestamp {
-          unhandledDocs
-          buckets(limit: 5) {
-            key,
+          terms(limit: 5) {
+            value,
             count
           }
         }
