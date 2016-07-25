@@ -10,7 +10,6 @@ module.exports = function (type) {
     name: ['Filter', type].join('_'),
     fields: {
       operator: { type: FilterOperatorEnum() },
-      value: { type: elasticTypes[type] },
       values: { type: new graphql.GraphQLList(elasticTypes[type]) }
     }
   })
