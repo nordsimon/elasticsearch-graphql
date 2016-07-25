@@ -7,10 +7,10 @@ module.exports = function (type) {
   if (types[type]) return types[type]
 
   types[type] = new graphql.GraphQLObjectType({
-    name: ['Bucket', type].join('_'),
-    description: 'Bucket for ' + type,
+    name: ['Terms', type].join('_'),
+    description: 'Bucket with terms for: ' + type,
     fields: {
-      key: {
+      value: {
         type: elasticTypes[type],
         resolve: function (bucket) {
           return bucket.key
