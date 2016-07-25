@@ -18,9 +18,9 @@
   "author": "Simon Nord <simon@nord.org>",
   "license": "ISC",
   "dependencies": {
-    "elasticsearch": "10.1.0",
     "flat": "1.6.0",
-    "lodash": "3.10.1"
+    "lodash": "3.10.1",
+    "request": "2.74.0"
   },
   "devDependencies": {
     "graphql": "0.4.16",
