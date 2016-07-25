@@ -10,7 +10,7 @@ For working example, checkout [elasticsearch-graphql-server-example](https://git
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-## Compitability
+## Compatibility
 This package is tested and working on
 - [graphql](https://github.com/graphql/graphql-js) version ^0.6.2 (should be okey from version 0.5.x)
 - ElasticSearch version ^2.3.1
