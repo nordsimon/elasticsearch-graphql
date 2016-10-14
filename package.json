@@ -23,6 +23,7 @@
     "request": "2.74.0"
   },
   "devDependencies": {
+    "debug": "2.2.0",
     "graphql": "0.4.16",
     "node-random-name": "^1.0.1",
     "tape": "4.4.0"
